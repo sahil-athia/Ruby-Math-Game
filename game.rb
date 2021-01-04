@@ -6,7 +6,7 @@ class Game
   end
   
   def question(numbers)
-    puts "#{@turn}: what is #{numbers[0]} + #{numbers[1]}"
+    puts "#{@turn}: what is #{numbers[0]} + #{numbers[1]} equal to?"
   end
 
   def check_answer(answer, numbers)
@@ -24,5 +24,12 @@ class Game
 
   def reset
     @turn = "Player 1"
+  end
+
+  def game_over(winning_player, lives)
+    @is_game_over = true
+    puts "\n----- GAME OVER -----"
+    puts "#{winning_player} wins with #{lives}/3 lives remaining"
+    puts "goodbye"
   end
 end
